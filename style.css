@@ -1,0 +1,116 @@
+body {
+	background-color: rgb(0, 0, 0);
+}
+
+.content {
+	float: left;
+	max-width: 190px;
+	width: 100%;
+	
+	overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: hidden;
+	display: inline-block;
+	position: relative;
+	border-radius: 3px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+		border-bottom-left-radius: 3px;
+	background-color: #fff;
+	cursor: pointer;
+
+	box-sizing: border-box;
+	outline: 0;
+		outline-color: initial;
+		outline-style: initial;
+		outline-width: 0px;
+
+	text-align: left;
+
+	font-size: 100%;
+
+}
+
+.content:after {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 1.8em;
+	display: block;
+	content: "";
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=) center no-repeat;
+	pointer-events: none;
+}
+
+select {
+	width: 130%;
+	border: none;
+		border-top-color: initial;
+	    border-top-style: none;
+	    border-top-width: initial;
+	    border-right-color: initial;
+	    border-right-style: none;
+	    border-right-width: initial;
+	    border-bottom-color: initial;
+	    border-bottom-style: none;
+	    border-bottom-width: initial;
+	    border-left-color: initial;
+	    border-left-style: none;
+	    border-left-width: initial;
+	    border-image-source: initial;
+	    border-image-slice: initial;
+	    border-image-width: initial;
+	    border-image-outset: initial;
+	    border-image-repeat: initial;
+	font-size: 15px;
+	position: relative;
+	cursor: pointer;
+
+	background: #fff;
+		background-image: initial;
+	    background-position-x: initial;
+	    background-position-y: initial;
+	    background-size: initial;
+	    background-repeat-x: initial;
+	    background-repeat-y: initial;
+	    background-attachment: initial;
+	    background-origin: initial;
+	    background-clip: initial;
+	    background-color: rgb(255, 255, 255);
+	border-radius: 5px;
+		border-top-left-radius: 5px;
+	    border-top-right-radius: 5px;
+	    border-bottom-right-radius: 5px;
+	    border-bottom-left-radius: 5px;
+	height: 28px;
+	outline: 0;
+		outline-color: initial;
+	    outline-style: initial;
+	    outline-width: 0px;	
+
+	margin: 0;
+	vertical-align: baseline;
+	
+	font-family: sans-serif;
+
+	box-sizing: border-box;
+
+	align-items: center;
+	white-space: pre;
+	color: black;
+
+	text-rendering: auto;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+
+	display: inline-block;
+	text-align: start;
+
+	font: 11px system-ui;
+
+}

@@ -1,5 +1,16 @@
-{
-  "item1": "Mercedes",
-  "item2": "Volvo",
-  "item3": "Bmw"
-}
+[
+  {
+    "level1": "Mercedes",
+    "level2": [
+      "A180",
+      "C200"
+    ] 
+  },
+  {  
+    "level1": "Volvo",
+    "level2": [
+      "S90",
+      "XC90"
+    ]
+  }
+]
