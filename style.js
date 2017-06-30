@@ -2,6 +2,7 @@
 const BASE_ID = "jfDropdown-custom";
 
 function formReady(){
+    
     console.log('form ready');
     var src_url = JFCustomWidget.getWidgetSetting('sourceURL');
     console.log(src_url);
