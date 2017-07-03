@@ -1,16 +1,14 @@
 [
   {
-    "level1": "Mercedes",
-    "level2": [
-      "A180",
-      "C200"
-    ] 
+    "val": "Mercedes",
+    "other": "A180"
   },
-  {  
-    "level1": "Volvo",
-    "level2": [
-      "S90",
-      "XC90"
-    ]
+  {
+    "val": "Volvo",
+    "other": "S90"
+  },
+  {
+    "val": "Citroen",
+    "other": "DS5"
   }
 ]
