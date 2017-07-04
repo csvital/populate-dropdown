@@ -1,14 +1,14 @@
 [
   {
-    "val": "Mercedes",
+    "name": "Mercedes",
     "other": "A180"
   },
   {
-    "val": "Volvo",
+    "name": "Volvo",
     "other": "S90"
   },
   {
-    "val": "Citroen",
+    "name": "Citroen",
     "other": "DS5"
   }
 ]

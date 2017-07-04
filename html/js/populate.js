@@ -1,52 +1,38 @@
 $(function(){ // widget management block
   JFCustomWidget.subscribe("ready",function(){
-    // parameters from user
     var jsonSource = JFCustomWidget.getWidgetSetting('jsonSource'); // required    
-    
-    console.log('jsonSource', jsonSource);
-    
+    var defaultOption = JFCustomWidget.getWidgetSetting('defaultOption');
 
-    console.log('start');
+    // if user gave the parameter about default selection
+    if(defaultOption !== undefined || defaultOption != null){
+      var option = $('<option></option>').attr("value", defaultOption).text(defaultOption);
+      $('#jfDropdown-custom').empty().append(option);  
+    }
+    
     var jqxhr = $.getJSON( jsonSource, function() {
       console.log( "success" );
-
     }).done(function() {
-        console.log( "second success" );
-        console.log('jqxhr', jqxhr);
-        console.log( jqxhr.responseJSON ); // Logs "jQuery Howto"
-
         var options = [];
         $.each(jqxhr.responseJSON, function(i, option) {
-          console.log('option val ->', option.val);
-          if(option.val === undefined){return true;} // bos obje ise gec
-          options.push($('<option />').val(option.val).text(option.val));
-        });
-        
-        // Timer 
-        var start = new Date();
-        $('#jfDropdown-custom').append(options);      
-        console.log('elapsed time for dom', new Date() - start);
+          // array of string OR array of objects
+          // if option.name = undefined its array of string
+          var toAdd = (option.name === undefined ? option : option.name);
 
+          // toAdd may object if no name attr, so just ignore it
+          if(typeof toAdd !== 'string'){return true;}
+
+          // create element and push to array
+          options.push($('<option />').val(toAdd).text(toAdd));
+        });
+
+        // manipulate the dom
+        $('#jfDropdown-custom').append(options);      
       })
       .fail(function( jqxhr, textStatus, error ) {
         var err = textStatus + ", " + error;
+        console.log('Something wrong!');
         console.log( "Request Failed: " + err );
       })
-      .always(function() {
-        console.log( "complete" );
-      });
- 
-    // Perform other work here ...
-     
-    // Set another completion function for the request above
-    jqxhr.complete(function() {
-      console.log(jqxhr);
-      console.log( "second complete" );
-    });
-    console.log('end');
-
-
- 
   });
 });
 
