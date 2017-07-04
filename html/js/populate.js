@@ -3,6 +3,8 @@ $(function(){ // widget management block
     var jsonSource = JFCustomWidget.getWidgetSetting('jsonSource'); // required    
     var defaultOption = JFCustomWidget.getWidgetSetting('defaultOption');
 
+    console.log('helloworld');
+
     // if user gave the parameter about default selection
     if(defaultOption !== undefined || defaultOption != null){
       var option = $('<option></option>').attr("value", defaultOption).text(defaultOption);

@@ -12,14 +12,14 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'html/min/styles.min.css': ['html/css/style.css']
+                    'min/styles.min.css': ['css/style.css']
                 }
             }
         },
         uglify: {
             dist: {
                 files: {
-                    'html/min/scripts.min.js': ['html/js/populate.js']
+                    'min/scripts.min.js': ['js/populate.js']
                 }
             }
         }

@@ -10,5 +10,9 @@
   {
     "name": "Citroen",
     "other": "DS5"
+  },
+  {
+    "name": "Hyundai",
+    "other": "ix35"
   }
 ]
