@@ -1,6 +1,9 @@
 {
   "name": "populate",
   "version": "0.0.1",
+  "scripts": {
+    "build": "grunt"
+  },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "~0.10.0",

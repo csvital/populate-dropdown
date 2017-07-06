@@ -2,35 +2,40 @@ $(function(){ // widget management block
   JFCustomWidget.subscribe("ready",function(){
     var jsonSource = JFCustomWidget.getWidgetSetting('jsonSource'); // required    
     var defaultOption = JFCustomWidget.getWidgetSetting('defaultOption');
-    var multiSelect = JFCustomWidget.getWidgetSetting('multiSelect');
+    var multiSelect = JFCustomWidget.getWidgetSetting('multiSelect') === 'true';
+
+    console.log('jsonSource', jsonSource);
+    console.log('defaultOption', defaultOption);
+    console.log('multiSelect', multiSelect);
 
     // if false remove it
-    if(multiSelect != 'true'){
+    if(!multiSelect){
       $('#jfDropdown-custom').removeAttr("multiple", "multiple");
     }
     
     if(document.getElementById("jfDropdown-custom").hasAttribute('multiple')){
       $("#jfDropdown-custom").select2({
         placeholder: defaultOption,
-      });  
+      });
     }else {
       $("#jfDropdown-custom").select2({
         placeholder: defaultOption,
         allowclear : true
       });
     }
-    
-    console.log(defaultOption);
+
     // if user gave the parameter about default selection
-    if(defaultOption !== undefined || defaultOption != null){
-      var option = $('<option></option>').attr("value", defaultOption).text(defaultOption);
-      $('#jfDropdown-custom').empty().append(option);  
-    }else {
-      // if no default option print empty option
-      var option = $('<option></option>').attr("value", 'null').text("");
-      $('#jfDropdown-custom').empty().append(option);  
+    if (!multiSelect) {
+      if (defaultOption !== undefined || defaultOption != null) {
+        var option = $('<option></option>').attr("value", defaultOption).text(defaultOption);
+        $('#jfDropdown-custom').empty().append(option);  
+      } else {
+        // if no default option print empty option
+        var option = $('<option></option>').attr("value", 'null').text("");
+        $('#jfDropdown-custom').empty().append(option);  
+      }
     }
-    
+
     var jqxhr = $.getJSON( jsonSource, function() {
       //console.log( "success" );
     }).done(function() {
