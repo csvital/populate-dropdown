@@ -3,20 +3,23 @@
 
 <head>
   <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"
-    integrity="sha256-spTpc4lvj4dOkKjrGokIrHkJgNA0xMS98Pw9N7ir9oI="
-    crossorigin="anonymous">
-  </script>
-  <link rel="stylesheet" type="text/css" href="min/styles.min.css">
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <link href="css/select2.min.css" rel="stylesheet" />
+
+  <style type="text/css">
+    .select2 {
+      width: 80% !important;;
+    }
+  </style>
 </head>
 
 <body>
   <div class="content">
-    <select id="jfDropdown-custom">
-      <option value="No Selection">Select your option</option>
+    <select multiple="multiple" class="js-example-basic-multiple js-states form-control" id="jfDropdown-custom">
     </select>
   </div>
-  <script src="min/scripts.min.js"></script>
+  <script src="js/populate.js"></script>
 </body>
 
 </html>

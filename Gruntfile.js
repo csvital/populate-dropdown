@@ -9,13 +9,13 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        cssmin: {
-            combine: {
-                files: {
-                    'min/styles.min.css': ['css/style.css']
-                }
-            }
-        },
+        // cssmin: {
+        //     combine: {
+        //         files: {
+        //             'min/styles.min.css': ['select2/select2.css']
+        //         }
+        //     }
+        // },
         uglify: {
             dist: {
                 files: {
@@ -25,8 +25,9 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    //grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['cssmin','uglify']);
+    //grunt.registerTask('default', ['cssmin','uglify']);
+    grunt.registerTask('default', ['uglify']);
 };
