@@ -3,10 +3,6 @@ $(function(){ // widget management block
     var jsonSource = JFCustomWidget.getWidgetSetting('jsonSource'); // required    
     var defaultOption = JFCustomWidget.getWidgetSetting('defaultOption');
     var multiSelect = JFCustomWidget.getWidgetSetting('multiSelect') === 'true';
- 
-    // console.log('jsonSource', jsonSource);
-    // console.log('defaultOption', defaultOption);
-    // console.log('multiSelect', multiSelect);
 
     if(jsonSource === undefined){jsonSource = [];}
 
@@ -33,25 +29,7 @@ $(function(){ // widget management block
       }
     }
 
-    // var jqXHR = null;
-
-    // //Download progress
-    //   jqxhr.addEventListener( "progress", function ( evt )
-    //   {
-    //       if ( evt.lengthComputable )
-    //       {
-    //           var percentComplete = Math.round( (evt.loaded * 100) / evt.total );
-    //           //Do something with download progress
-    //           console.log( 'Downloaded percent', percentComplete );
-    //       }
-    //   }, false );
-
     var jqxhr = $.getJSON( jsonSource, function(data) {
-      // console.log( data );
-      // $( "#progressbar" ).progressbar({
-      //   value: data.progressbar
-      // });
-      // console.log('jqxhr', jqxhr);      
     }).done(function() {
         var options = [];
         $.each(jqxhr.responseJSON, function(i, option) {
@@ -75,8 +53,6 @@ $(function(){ // widget management block
         console.log( "Request Failed: " + err );
       })
       .progress(function(e){
-        // console.log('e', e);
-        // console.log(e);
         if(e.lengthComputable) {
             //calculate the percentage loaded
             var pct = (e.loaded / e.total) * 100;
@@ -92,9 +68,8 @@ $(function(){ // widget management block
 // during open and close actions request frame size
 $(function(){
   $('#jfDropdown-custom').on('select2:opening', function (evt) {
-    // console.log('evt', evt);
-    // console.log('aciliyom');
     
+    // poor solution static height and width :(
     data ={  
       "width": 400,
       "height": $(".content").height() + 275
@@ -103,8 +78,6 @@ $(function(){
     JFCustomWidget.requestFrameResize(data);
   });
   $('#jfDropdown-custom').on('select2:closing', function (evt) {
-    // console.log('evt', evt);
-    // console.log('kapaniyom');
     
     data ={  
       "width": 400,
@@ -114,8 +87,6 @@ $(function(){
     JFCustomWidget.requestFrameResize(data);
   });
 });
-
-
 
 // When submitter changed the selection 
 // send a message to form, for conditions etc.
@@ -134,10 +105,6 @@ $(function() {
     JFCustomWidget.sendData({value: $("#jfDropdown-custom").val()});
     
   });
-
-  // $('#jfDropdown-custom').change(function () {
-  //   JFCustomWidget.sendData({value: this.value});
-  // });
 });
 
 // Subscription for submit -> already send message
@@ -155,12 +122,7 @@ $(function(){
       // console.log('any other ');
       result = $("#jfDropdown-custom").val(); 
     }
-    // if($("#jfDropdown-custom").val() != null || $("#jfDropdown-custom").val() !== 'string'){
-
-
-    //   result = $("#jfDropdown-custom").val().join('\n');  
-    // }
-
+    
     var msg = {
       valid: true,
       value: result
@@ -177,8 +139,6 @@ $(function(){
   }
 
   $('select').on('change', function (evt) {
-    // console.log('yes');
-    // console.log('evt', evt);
     showHeight( "dropdown", $(".select2-selection.select2-selection--multiple").height() );
     showHeight( "iframe", $(".content").height() );
 
